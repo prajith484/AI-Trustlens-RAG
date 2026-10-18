@@ -8,3 +8,7 @@ bm25_index.pkl
 evaluation/results.json
 evaluation/results.csv
 neo4j_data/
+documents_registry.json
+graph_store.json
+documents_registry.json
+graph_store.json
