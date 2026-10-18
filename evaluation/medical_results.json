@@ -1,0 +1,1043 @@
+{
+  "top_k": 5,
+  "config": {
+    "embedding_backend": "sentence-transformers",
+    "embedding_model": "sentence-transformers/all-MiniLM-L6-v2",
+    "embedding_dim": 384,
+    "qdrant_url": "./qdrant_storage",
+    "qdrant_collection": "trustlens_chunks",
+    "retrieval_modes": [
+      "vector",
+      "bm25",
+      "graph",
+      "hybrid"
+    ],
+    "note": "Metrics measure RETRIEVAL quality (recall/MRR/coverage), not medical fact-verification accuracy."
+  },
+  "modes": {
+    "vector": {
+      "mode": "vector",
+      "domain": "Medical",
+      "summary": {
+        "recall@1": 0.6667,
+        "precision@1": 0.6667,
+        "recall@3": 0.6667,
+        "precision@3": 0.2222,
+        "recall@5": 0.6667,
+        "precision@5": 0.2222,
+        "mrr": 0.6667,
+        "mean_latency_ms": 111.67,
+        "coverage": 0.6667,
+        "n_claims": 6
+      },
+      "per_claim": [
+        {
+          "id": "m01-supported",
+          "kind": "supported",
+          "claim": "Diabetes is a chronic disease linked to insulin.",
+          "domain_filter": "Medical",
+          "retrieved": [
+            "doc_diabetes_e9d0a8e1::c0000::4c94be607114",
+            "doc_hypertension_39a6d49a::c0000::3c8f387489bd",
+            "doc_antibiotic_use_4c5fc814::c0000::a88cde8a80f5"
+          ],
+          "retrieved_domains": [
+            "Medical"
+          ],
+          "relevant": [
+            "doc_diabetes_e9d0a8e1::c0000::4c94be607114"
+          ],
+          "hits": 1,
+          "excluded_domain_leak": [],
+          "latency_ms": 614,
+          "evidence_found": true,
+          "diagnostics": {
+            "per_method": [
+              {
+                "method": "vector",
+                "status": "ok",
+                "count": 3,
+                "error": null,
+                "latency_ms": 612
+              }
+            ],
+            "fallbacks": [],
+            "filters": {
+              "domain": "Medical"
+            },
+            "rrf_k": 60,
+            "fused_candidates": 3
+          }
+        },
+        {
+          "id": "m02-paraphrase",
+          "kind": "paraphrase",
+          "claim": "High blood pressure often has no noticeable symptoms.",
+          "domain_filter": "Medical",
+          "retrieved": [
+            "doc_hypertension_39a6d49a::c0000::3c8f387489bd",
+            "doc_diabetes_e9d0a8e1::c0000::4c94be607114",
+            "doc_antibiotic_use_4c5fc814::c0000::a88cde8a80f5"
+          ],
+          "retrieved_domains": [
+            "Medical"
+          ],
+          "relevant": [
+            "doc_hypertension_39a6d49a::c0000::3c8f387489bd"
+          ],
+          "hits": 1,
+          "excluded_domain_leak": [],
+          "latency_ms": 10,
+          "evidence_found": true,
+          "diagnostics": {
+            "per_method": [
+              {
+                "method": "vector",
+                "status": "ok",
+                "count": 3,
+                "error": null,
+                "latency_ms": 8
+              }
+            ],
+            "fallbacks": [],
+            "filters": {
+              "domain": "Medical"
+            },
+            "rrf_k": 60,
+            "fused_candidates": 3
+          }
+        },
+        {
+          "id": "m03-cross-doc",
+          "kind": "cross-document",
+          "claim": "Antibiotics do not work against colds or flu.",
+          "domain_filter": "Medical",
+          "retrieved": [
+            "doc_antibiotic_use_4c5fc814::c0000::a88cde8a80f5",
+            "doc_diabetes_e9d0a8e1::c0000::4c94be607114",
+            "doc_hypertension_39a6d49a::c0000::3c8f387489bd"
+          ],
+          "retrieved_domains": [
+            "Medical"
+          ],
+          "relevant": [
+            "doc_antibiotic_use_4c5fc814::c0000::a88cde8a80f5"
+          ],
+          "hits": 1,
+          "excluded_domain_leak": [],
+          "latency_ms": 11,
+          "evidence_found": true,
+          "diagnostics": {
+            "per_method": [
+              {
+                "method": "vector",
+                "status": "ok",
+                "count": 3,
+                "error": null,
+                "latency_ms": 9
+              }
+            ],
+            "fallbacks": [],
+            "filters": {
+              "domain": "Medical"
+            },
+            "rrf_k": 60,
+            "fused_candidates": 3
+          }
+        },
+        {
+          "id": "m04-hypertension",
+          "kind": "supported",
+          "claim": "Hypertension is an important risk factor for cardiovascular disease.",
+          "domain_filter": "Medical",
+          "retrieved": [
+            "doc_hypertension_39a6d49a::c0000::3c8f387489bd",
+            "doc_diabetes_e9d0a8e1::c0000::4c94be607114",
+            "doc_antibiotic_use_4c5fc814::c0000::a88cde8a80f5"
+          ],
+          "retrieved_domains": [
+            "Medical"
+          ],
+          "relevant": [
+            "doc_hypertension_39a6d49a::c0000::3c8f387489bd"
+          ],
+          "hits": 1,
+          "excluded_domain_leak": [],
+          "latency_ms": 11,
+          "evidence_found": true,
+          "diagnostics": {
+            "per_method": [
+              {
+                "method": "vector",
+                "status": "ok",
+                "count": 3,
+                "error": null,
+                "latency_ms": 9
+              }
+            ],
+            "fallbacks": [],
+            "filters": {
+              "domain": "Medical"
+            },
+            "rrf_k": 60,
+            "fused_candidates": 3
+          }
+        },
+        {
+          "id": "m05-no-evidence",
+          "kind": "no-evidence",
+          "claim": "Malaria vaccines must be stored at minus eighty degrees.",
+          "domain_filter": "Medical",
+          "retrieved": [
+            "doc_antibiotic_use_4c5fc814::c0000::a88cde8a80f5",
+            "doc_diabetes_e9d0a8e1::c0000::4c94be607114",
+            "doc_hypertension_39a6d49a::c0000::3c8f387489bd"
+          ],
+          "retrieved_domains": [
+            "Medical"
+          ],
+          "relevant": [],
+          "hits": 0,
+          "excluded_domain_leak": [],
+          "latency_ms": 12,
+          "evidence_found": true,
+          "diagnostics": {
+            "per_method": [
+              {
+                "method": "vector",
+                "status": "ok",
+                "count": 3,
+                "error": null,
+                "latency_ms": 9
+              }
+            ],
+            "fallbacks": [],
+            "filters": {
+              "domain": "Medical"
+            },
+            "rrf_k": 60,
+            "fused_candidates": 3
+          }
+        },
+        {
+          "id": "m06-out-of-domain",
+          "kind": "out-of-domain",
+          "claim": "Transformers were introduced in 2017.",
+          "domain_filter": "Medical",
+          "retrieved": [
+            "doc_antibiotic_use_4c5fc814::c0000::a88cde8a80f5",
+            "doc_diabetes_e9d0a8e1::c0000::4c94be607114",
+            "doc_hypertension_39a6d49a::c0000::3c8f387489bd"
+          ],
+          "retrieved_domains": [
+            "Medical"
+          ],
+          "relevant": [],
+          "hits": 0,
+          "excluded_domain_leak": [],
+          "latency_ms": 12,
+          "evidence_found": true,
+          "diagnostics": {
+            "per_method": [
+              {
+                "method": "vector",
+                "status": "ok",
+                "count": 3,
+                "error": null,
+                "latency_ms": 10
+              }
+            ],
+            "fallbacks": [],
+            "filters": {
+              "domain": "Medical"
+            },
+            "rrf_k": 60,
+            "fused_candidates": 3
+          }
+        }
+      ]
+    },
+    "bm25": {
+      "mode": "bm25",
+      "domain": "Medical",
+      "summary": {
+        "recall@1": 0.6667,
+        "precision@1": 0.6667,
+        "recall@3": 0.6667,
+        "precision@3": 0.25,
+        "recall@5": 0.6667,
+        "precision@5": 0.25,
+        "mrr": 0.6667,
+        "mean_latency_ms": 0.67,
+        "coverage": 0.6667,
+        "n_claims": 6
+      },
+      "per_claim": [
+        {
+          "id": "m01-supported",
+          "kind": "supported",
+          "claim": "Diabetes is a chronic disease linked to insulin.",
+          "domain_filter": "Medical",
+          "retrieved": [
+            "doc_diabetes_e9d0a8e1::c0000::4c94be607114",
+            "doc_hypertension_39a6d49a::c0000::3c8f387489bd",
+            "doc_antibiotic_use_4c5fc814::c0000::a88cde8a80f5"
+          ],
+          "retrieved_domains": [
+            "Medical"
+          ],
+          "relevant": [
+            "doc_diabetes_e9d0a8e1::c0000::4c94be607114"
+          ],
+          "hits": 1,
+          "excluded_domain_leak": [],
+          "latency_ms": 2,
+          "evidence_found": true,
+          "diagnostics": {
+            "per_method": [
+              {
+                "method": "bm25",
+                "status": "ok",
+                "count": 3,
+                "error": null,
+                "latency_ms": 0
+              }
+            ],
+            "fallbacks": [],
+            "filters": {
+              "domain": "Medical"
+            },
+            "rrf_k": 60,
+            "fused_candidates": 3
+          }
+        },
+        {
+          "id": "m02-paraphrase",
+          "kind": "paraphrase",
+          "claim": "High blood pressure often has no noticeable symptoms.",
+          "domain_filter": "Medical",
+          "retrieved": [
+            "doc_hypertension_39a6d49a::c0000::3c8f387489bd",
+            "doc_diabetes_e9d0a8e1::c0000::4c94be607114"
+          ],
+          "retrieved_domains": [
+            "Medical"
+          ],
+          "relevant": [
+            "doc_hypertension_39a6d49a::c0000::3c8f387489bd"
+          ],
+          "hits": 1,
+          "excluded_domain_leak": [],
+          "latency_ms": 0,
+          "evidence_found": true,
+          "diagnostics": {
+            "per_method": [
+              {
+                "method": "bm25",
+                "status": "ok",
+                "count": 2,
+                "error": null,
+                "latency_ms": 0
+              }
+            ],
+            "fallbacks": [],
+            "filters": {
+              "domain": "Medical"
+            },
+            "rrf_k": 60,
+            "fused_candidates": 2
+          }
+        },
+        {
+          "id": "m03-cross-doc",
+          "kind": "cross-document",
+          "claim": "Antibiotics do not work against colds or flu.",
+          "domain_filter": "Medical",
+          "retrieved": [
+            "doc_antibiotic_use_4c5fc814::c0000::a88cde8a80f5",
+            "doc_diabetes_e9d0a8e1::c0000::4c94be607114",
+            "doc_hypertension_39a6d49a::c0000::3c8f387489bd"
+          ],
+          "retrieved_domains": [
+            "Medical"
+          ],
+          "relevant": [
+            "doc_antibiotic_use_4c5fc814::c0000::a88cde8a80f5"
+          ],
+          "hits": 1,
+          "excluded_domain_leak": [],
+          "latency_ms": 1,
+          "evidence_found": true,
+          "diagnostics": {
+            "per_method": [
+              {
+                "method": "bm25",
+                "status": "ok",
+                "count": 3,
+                "error": null,
+                "latency_ms": 0
+              }
+            ],
+            "fallbacks": [],
+            "filters": {
+              "domain": "Medical"
+            },
+            "rrf_k": 60,
+            "fused_candidates": 3
+          }
+        },
+        {
+          "id": "m04-hypertension",
+          "kind": "supported",
+          "claim": "Hypertension is an important risk factor for cardiovascular disease.",
+          "domain_filter": "Medical",
+          "retrieved": [
+            "doc_hypertension_39a6d49a::c0000::3c8f387489bd",
+            "doc_diabetes_e9d0a8e1::c0000::4c94be607114",
+            "doc_antibiotic_use_4c5fc814::c0000::a88cde8a80f5"
+          ],
+          "retrieved_domains": [
+            "Medical"
+          ],
+          "relevant": [
+            "doc_hypertension_39a6d49a::c0000::3c8f387489bd"
+          ],
+          "hits": 1,
+          "excluded_domain_leak": [],
+          "latency_ms": 1,
+          "evidence_found": true,
+          "diagnostics": {
+            "per_method": [
+              {
+                "method": "bm25",
+                "status": "ok",
+                "count": 3,
+                "error": null,
+                "latency_ms": 0
+              }
+            ],
+            "fallbacks": [],
+            "filters": {
+              "domain": "Medical"
+            },
+            "rrf_k": 60,
+            "fused_candidates": 3
+          }
+        },
+        {
+          "id": "m05-no-evidence",
+          "kind": "no-evidence",
+          "claim": "Malaria vaccines must be stored at minus eighty degrees.",
+          "domain_filter": "Medical",
+          "retrieved": [
+            "doc_hypertension_39a6d49a::c0000::3c8f387489bd",
+            "doc_diabetes_e9d0a8e1::c0000::4c94be607114"
+          ],
+          "retrieved_domains": [
+            "Medical"
+          ],
+          "relevant": [],
+          "hits": 0,
+          "excluded_domain_leak": [],
+          "latency_ms": 0,
+          "evidence_found": true,
+          "diagnostics": {
+            "per_method": [
+              {
+                "method": "bm25",
+                "status": "ok",
+                "count": 2,
+                "error": null,
+                "latency_ms": 0
+              }
+            ],
+            "fallbacks": [],
+            "filters": {
+              "domain": "Medical"
+            },
+            "rrf_k": 60,
+            "fused_candidates": 2
+          }
+        },
+        {
+          "id": "m06-out-of-domain",
+          "kind": "out-of-domain",
+          "claim": "Transformers were introduced in 2017.",
+          "domain_filter": "Medical",
+          "retrieved": [],
+          "retrieved_domains": [],
+          "relevant": [],
+          "hits": 0,
+          "excluded_domain_leak": [],
+          "latency_ms": 0,
+          "evidence_found": false,
+          "diagnostics": {
+            "per_method": [
+              {
+                "method": "bm25",
+                "status": "empty",
+                "count": 0,
+                "error": null,
+                "latency_ms": 0
+              }
+            ],
+            "fallbacks": [],
+            "filters": {
+              "domain": "Medical"
+            },
+            "rrf_k": 60,
+            "fused_candidates": 0
+          }
+        }
+      ]
+    },
+    "graph": {
+      "mode": "graph",
+      "domain": "Medical",
+      "summary": {
+        "recall@1": 0.6667,
+        "precision@1": 0.6667,
+        "recall@3": 0.6667,
+        "precision@3": 0.6667,
+        "recall@5": 0.6667,
+        "precision@5": 0.6667,
+        "mrr": 0.6667,
+        "mean_latency_ms": 357.5,
+        "coverage": 0.6667,
+        "n_claims": 6
+      },
+      "per_claim": [
+        {
+          "id": "m01-supported",
+          "kind": "supported",
+          "claim": "Diabetes is a chronic disease linked to insulin.",
+          "domain_filter": "Medical",
+          "retrieved": [
+            "doc_diabetes_e9d0a8e1::c0000::4c94be607114"
+          ],
+          "retrieved_domains": [
+            "Medical"
+          ],
+          "relevant": [
+            "doc_diabetes_e9d0a8e1::c0000::4c94be607114"
+          ],
+          "hits": 1,
+          "excluded_domain_leak": [],
+          "latency_ms": 2145,
+          "evidence_found": true,
+          "diagnostics": {
+            "per_method": [
+              {
+                "method": "graph",
+                "status": "ok",
+                "count": 1,
+                "error": null,
+                "latency_ms": 2145
+              }
+            ],
+            "fallbacks": [],
+            "filters": {
+              "domain": "Medical"
+            },
+            "rrf_k": 60,
+            "fused_candidates": 1
+          }
+        },
+        {
+          "id": "m02-paraphrase",
+          "kind": "paraphrase",
+          "claim": "High blood pressure often has no noticeable symptoms.",
+          "domain_filter": "Medical",
+          "retrieved": [
+            "doc_hypertension_39a6d49a::c0000::3c8f387489bd"
+          ],
+          "retrieved_domains": [
+            "Medical"
+          ],
+          "relevant": [
+            "doc_hypertension_39a6d49a::c0000::3c8f387489bd"
+          ],
+          "hits": 1,
+          "excluded_domain_leak": [],
+          "latency_ms": 0,
+          "evidence_found": true,
+          "diagnostics": {
+            "per_method": [
+              {
+                "method": "graph",
+                "status": "ok",
+                "count": 1,
+                "error": null,
+                "latency_ms": 0
+              }
+            ],
+            "fallbacks": [],
+            "filters": {
+              "domain": "Medical"
+            },
+            "rrf_k": 60,
+            "fused_candidates": 1
+          }
+        },
+        {
+          "id": "m03-cross-doc",
+          "kind": "cross-document",
+          "claim": "Antibiotics do not work against colds or flu.",
+          "domain_filter": "Medical",
+          "retrieved": [
+            "doc_antibiotic_use_4c5fc814::c0000::a88cde8a80f5"
+          ],
+          "retrieved_domains": [
+            "Medical"
+          ],
+          "relevant": [
+            "doc_antibiotic_use_4c5fc814::c0000::a88cde8a80f5"
+          ],
+          "hits": 1,
+          "excluded_domain_leak": [],
+          "latency_ms": 0,
+          "evidence_found": true,
+          "diagnostics": {
+            "per_method": [
+              {
+                "method": "graph",
+                "status": "ok",
+                "count": 1,
+                "error": null,
+                "latency_ms": 0
+              }
+            ],
+            "fallbacks": [],
+            "filters": {
+              "domain": "Medical"
+            },
+            "rrf_k": 60,
+            "fused_candidates": 1
+          }
+        },
+        {
+          "id": "m04-hypertension",
+          "kind": "supported",
+          "claim": "Hypertension is an important risk factor for cardiovascular disease.",
+          "domain_filter": "Medical",
+          "retrieved": [
+            "doc_hypertension_39a6d49a::c0000::3c8f387489bd"
+          ],
+          "retrieved_domains": [
+            "Medical"
+          ],
+          "relevant": [
+            "doc_hypertension_39a6d49a::c0000::3c8f387489bd"
+          ],
+          "hits": 1,
+          "excluded_domain_leak": [],
+          "latency_ms": 0,
+          "evidence_found": true,
+          "diagnostics": {
+            "per_method": [
+              {
+                "method": "graph",
+                "status": "ok",
+                "count": 1,
+                "error": null,
+                "latency_ms": 0
+              }
+            ],
+            "fallbacks": [],
+            "filters": {
+              "domain": "Medical"
+            },
+            "rrf_k": 60,
+            "fused_candidates": 1
+          }
+        },
+        {
+          "id": "m05-no-evidence",
+          "kind": "no-evidence",
+          "claim": "Malaria vaccines must be stored at minus eighty degrees.",
+          "domain_filter": "Medical",
+          "retrieved": [],
+          "retrieved_domains": [],
+          "relevant": [],
+          "hits": 0,
+          "excluded_domain_leak": [],
+          "latency_ms": 0,
+          "evidence_found": false,
+          "diagnostics": {
+            "per_method": [
+              {
+                "method": "graph",
+                "status": "empty",
+                "count": 0,
+                "error": null,
+                "latency_ms": 0
+              }
+            ],
+            "fallbacks": [],
+            "filters": {
+              "domain": "Medical"
+            },
+            "rrf_k": 60,
+            "fused_candidates": 0
+          }
+        },
+        {
+          "id": "m06-out-of-domain",
+          "kind": "out-of-domain",
+          "claim": "Transformers were introduced in 2017.",
+          "domain_filter": "Medical",
+          "retrieved": [],
+          "retrieved_domains": [],
+          "relevant": [],
+          "hits": 0,
+          "excluded_domain_leak": [],
+          "latency_ms": 0,
+          "evidence_found": false,
+          "diagnostics": {
+            "per_method": [
+              {
+                "method": "graph",
+                "status": "empty",
+                "count": 0,
+                "error": null,
+                "latency_ms": 0
+              }
+            ],
+            "fallbacks": [],
+            "filters": {
+              "domain": "Medical"
+            },
+            "rrf_k": 60,
+            "fused_candidates": 0
+          }
+        }
+      ]
+    },
+    "hybrid": {
+      "mode": "hybrid",
+      "domain": "Medical",
+      "summary": {
+        "recall@1": 0.6667,
+        "precision@1": 0.6667,
+        "recall@3": 0.6667,
+        "precision@3": 0.2222,
+        "recall@5": 0.6667,
+        "precision@5": 0.2222,
+        "mrr": 0.6667,
+        "mean_latency_ms": 11.5,
+        "coverage": 0.6667,
+        "n_claims": 6
+      },
+      "per_claim": [
+        {
+          "id": "m01-supported",
+          "kind": "supported",
+          "claim": "Diabetes is a chronic disease linked to insulin.",
+          "domain_filter": "Medical",
+          "retrieved": [
+            "doc_diabetes_e9d0a8e1::c0000::4c94be607114",
+            "doc_hypertension_39a6d49a::c0000::3c8f387489bd",
+            "doc_antibiotic_use_4c5fc814::c0000::a88cde8a80f5"
+          ],
+          "retrieved_domains": [
+            "Medical"
+          ],
+          "relevant": [
+            "doc_diabetes_e9d0a8e1::c0000::4c94be607114"
+          ],
+          "hits": 1,
+          "excluded_domain_leak": [],
+          "latency_ms": 11,
+          "evidence_found": true,
+          "diagnostics": {
+            "per_method": [
+              {
+                "method": "vector",
+                "status": "ok",
+                "count": 3,
+                "error": null,
+                "latency_ms": 9
+              },
+              {
+                "method": "bm25",
+                "status": "ok",
+                "count": 3,
+                "error": null,
+                "latency_ms": 0
+              },
+              {
+                "method": "graph",
+                "status": "ok",
+                "count": 1,
+                "error": null,
+                "latency_ms": 0
+              }
+            ],
+            "fallbacks": [],
+            "filters": {
+              "domain": "Medical"
+            },
+            "rrf_k": 60,
+            "fused_candidates": 3
+          }
+        },
+        {
+          "id": "m02-paraphrase",
+          "kind": "paraphrase",
+          "claim": "High blood pressure often has no noticeable symptoms.",
+          "domain_filter": "Medical",
+          "retrieved": [
+            "doc_hypertension_39a6d49a::c0000::3c8f387489bd",
+            "doc_diabetes_e9d0a8e1::c0000::4c94be607114",
+            "doc_antibiotic_use_4c5fc814::c0000::a88cde8a80f5"
+          ],
+          "retrieved_domains": [
+            "Medical"
+          ],
+          "relevant": [
+            "doc_hypertension_39a6d49a::c0000::3c8f387489bd"
+          ],
+          "hits": 1,
+          "excluded_domain_leak": [],
+          "latency_ms": 11,
+          "evidence_found": true,
+          "diagnostics": {
+            "per_method": [
+              {
+                "method": "vector",
+                "status": "ok",
+                "count": 3,
+                "error": null,
+                "latency_ms": 8
+              },
+              {
+                "method": "bm25",
+                "status": "ok",
+                "count": 2,
+                "error": null,
+                "latency_ms": 0
+              },
+              {
+                "method": "graph",
+                "status": "ok",
+                "count": 1,
+                "error": null,
+                "latency_ms": 0
+              }
+            ],
+            "fallbacks": [],
+            "filters": {
+              "domain": "Medical"
+            },
+            "rrf_k": 60,
+            "fused_candidates": 3
+          }
+        },
+        {
+          "id": "m03-cross-doc",
+          "kind": "cross-document",
+          "claim": "Antibiotics do not work against colds or flu.",
+          "domain_filter": "Medical",
+          "retrieved": [
+            "doc_antibiotic_use_4c5fc814::c0000::a88cde8a80f5",
+            "doc_diabetes_e9d0a8e1::c0000::4c94be607114",
+            "doc_hypertension_39a6d49a::c0000::3c8f387489bd"
+          ],
+          "retrieved_domains": [
+            "Medical"
+          ],
+          "relevant": [
+            "doc_antibiotic_use_4c5fc814::c0000::a88cde8a80f5"
+          ],
+          "hits": 1,
+          "excluded_domain_leak": [],
+          "latency_ms": 13,
+          "evidence_found": true,
+          "diagnostics": {
+            "per_method": [
+              {
+                "method": "vector",
+                "status": "ok",
+                "count": 3,
+                "error": null,
+                "latency_ms": 10
+              },
+              {
+                "method": "bm25",
+                "status": "ok",
+                "count": 3,
+                "error": null,
+                "latency_ms": 0
+              },
+              {
+                "method": "graph",
+                "status": "ok",
+                "count": 1,
+                "error": null,
+                "latency_ms": 0
+              }
+            ],
+            "fallbacks": [],
+            "filters": {
+              "domain": "Medical"
+            },
+            "rrf_k": 60,
+            "fused_candidates": 3
+          }
+        },
+        {
+          "id": "m04-hypertension",
+          "kind": "supported",
+          "claim": "Hypertension is an important risk factor for cardiovascular disease.",
+          "domain_filter": "Medical",
+          "retrieved": [
+            "doc_hypertension_39a6d49a::c0000::3c8f387489bd",
+            "doc_diabetes_e9d0a8e1::c0000::4c94be607114",
+            "doc_antibiotic_use_4c5fc814::c0000::a88cde8a80f5"
+          ],
+          "retrieved_domains": [
+            "Medical"
+          ],
+          "relevant": [
+            "doc_hypertension_39a6d49a::c0000::3c8f387489bd"
+          ],
+          "hits": 1,
+          "excluded_domain_leak": [],
+          "latency_ms": 12,
+          "evidence_found": true,
+          "diagnostics": {
+            "per_method": [
+              {
+                "method": "vector",
+                "status": "ok",
+                "count": 3,
+                "error": null,
+                "latency_ms": 9
+              },
+              {
+                "method": "bm25",
+                "status": "ok",
+                "count": 3,
+                "error": null,
+                "latency_ms": 0
+              },
+              {
+                "method": "graph",
+                "status": "ok",
+                "count": 1,
+                "error": null,
+                "latency_ms": 0
+              }
+            ],
+            "fallbacks": [],
+            "filters": {
+              "domain": "Medical"
+            },
+            "rrf_k": 60,
+            "fused_candidates": 3
+          }
+        },
+        {
+          "id": "m05-no-evidence",
+          "kind": "no-evidence",
+          "claim": "Malaria vaccines must be stored at minus eighty degrees.",
+          "domain_filter": "Medical",
+          "retrieved": [
+            "doc_hypertension_39a6d49a::c0000::3c8f387489bd",
+            "doc_diabetes_e9d0a8e1::c0000::4c94be607114",
+            "doc_antibiotic_use_4c5fc814::c0000::a88cde8a80f5"
+          ],
+          "retrieved_domains": [
+            "Medical"
+          ],
+          "relevant": [],
+          "hits": 0,
+          "excluded_domain_leak": [],
+          "latency_ms": 10,
+          "evidence_found": true,
+          "diagnostics": {
+            "per_method": [
+              {
+                "method": "vector",
+                "status": "ok",
+                "count": 3,
+                "error": null,
+                "latency_ms": 8
+              },
+              {
+                "method": "bm25",
+                "status": "ok",
+                "count": 2,
+                "error": null,
+                "latency_ms": 0
+              },
+              {
+                "method": "graph",
+                "status": "empty",
+                "count": 0,
+                "error": null,
+                "latency_ms": 0
+              }
+            ],
+            "fallbacks": [],
+            "filters": {
+              "domain": "Medical"
+            },
+            "rrf_k": 60,
+            "fused_candidates": 3
+          }
+        },
+        {
+          "id": "m06-out-of-domain",
+          "kind": "out-of-domain",
+          "claim": "Transformers were introduced in 2017.",
+          "domain_filter": "Medical",
+          "retrieved": [
+            "doc_antibiotic_use_4c5fc814::c0000::a88cde8a80f5",
+            "doc_diabetes_e9d0a8e1::c0000::4c94be607114",
+            "doc_hypertension_39a6d49a::c0000::3c8f387489bd"
+          ],
+          "retrieved_domains": [
+            "Medical"
+          ],
+          "relevant": [],
+          "hits": 0,
+          "excluded_domain_leak": [],
+          "latency_ms": 12,
+          "evidence_found": true,
+          "diagnostics": {
+            "per_method": [
+              {
+                "method": "vector",
+                "status": "ok",
+                "count": 3,
+                "error": null,
+                "latency_ms": 9
+              },
+              {
+                "method": "bm25",
+                "status": "empty",
+                "count": 0,
+                "error": null,
+                "latency_ms": 0
+              },
+              {
+                "method": "graph",
+                "status": "empty",
+                "count": 0,
+                "error": null,
+                "latency_ms": 0
+              }
+            ],
+            "fallbacks": [],
+            "filters": {
+              "domain": "Medical"
+            },
+            "rrf_k": 60,
+            "fused_candidates": 3
+          }
+        }
+      ]
+    }
+  }
+}

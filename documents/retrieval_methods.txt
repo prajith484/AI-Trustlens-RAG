@@ -1,0 +1,9 @@
+Keyword Search, Graph Retrieval, and Hybrid Ranking
+
+BM25 ranks documents using term frequency and inverse document frequency. It matches exact query terms and is strong for technical terminology, dates, and version numbers.
+
+A knowledge graph in Neo4j represents Documents, Chunks, Entities, and their relationships. A Chunk MENTIONS an Entity, an Entity is RELATED_TO another Entity, and an Entity APPEARS_IN a Document. Graph retrieval traverses these relationships to find supporting passages.
+
+Reciprocal Rank Fusion combines ranked lists from multiple retrievers. Each chunk receives a fused score equal to the sum of 1/(k + rank) over the methods that returned it, with k set to 60 by default. Raw scores from different methods are never directly combined.
+
+Hybrid retrieval merges Qdrant vector search, BM25 keyword search, and Neo4j graph traversal, then deduplicates by chunk ID and applies a final ranking stage.

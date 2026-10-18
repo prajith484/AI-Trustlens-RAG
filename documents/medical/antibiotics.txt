@@ -1,0 +1,9 @@
+Source: U.S. Centers for Disease Control and Prevention (CDC)
+Title: Antibiotic Use
+URL: https://www.cdc.gov/antibiotic-use/
+
+MEDICAL RAG TEST DOCUMENT — verify against the linked source before clinical use.
+
+Antibiotics are medicines used to treat certain bacterial infections. They do not treat viral infections such as colds or flu. Using antibiotics when they are not needed can contribute to antibiotic resistance. Advice about appropriate antibiotic use should follow current guidance from a qualified healthcare professional and the source above.
+
+This document is a starter template for testing retrieval. Replace or expand this text with relevant factual passages from the linked source, preserving the original meaning and recording the date you accessed or reviewed the source.

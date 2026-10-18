@@ -1,0 +1,86 @@
+{
+  "doc_ai_transformers_5c6bcfb6": {
+    "document_id": "doc_ai_transformers_5c6bcfb6",
+    "title": "ai transformers",
+    "source_name": "ai_transformers.txt",
+    "source_url": null,
+    "publication_date": null,
+    "domain": "general",
+    "document_type": "txt",
+    "content_hash": "5c6bcfb6fe1af7df",
+    "ingestion_date": "2026-10-12T09:48:25.508027+00:00",
+    "chunk_count": 1
+  },
+  "doc_python_basics_508510e3": {
+    "document_id": "doc_python_basics_508510e3",
+    "title": "python basics",
+    "source_name": "python_basics.txt",
+    "source_url": null,
+    "publication_date": null,
+    "domain": "general",
+    "document_type": "txt",
+    "content_hash": "508510e37f61120b",
+    "ingestion_date": "2026-10-12T09:48:25.508289+00:00",
+    "chunk_count": 1
+  },
+  "doc_retrieval_methods_9a1af4d2": {
+    "document_id": "doc_retrieval_methods_9a1af4d2",
+    "title": "retrieval methods",
+    "source_name": "retrieval_methods.txt",
+    "source_url": null,
+    "publication_date": null,
+    "domain": "general",
+    "document_type": "txt",
+    "content_hash": "9a1af4d2f0a1fe57",
+    "ingestion_date": "2026-10-12T09:48:25.508511+00:00",
+    "chunk_count": 1
+  },
+  "doc_vector_search_qdrant_f7d92489": {
+    "document_id": "doc_vector_search_qdrant_f7d92489",
+    "title": "vector search qdrant",
+    "source_name": "vector_search_qdrant.txt",
+    "source_url": null,
+    "publication_date": null,
+    "domain": "general",
+    "document_type": "txt",
+    "content_hash": "f7d92489ebbb14fd",
+    "ingestion_date": "2026-10-12T09:48:25.508717+00:00",
+    "chunk_count": 1
+  },
+  "doc_antibiotic_use_4c5fc814": {
+    "document_id": "doc_antibiotic_use_4c5fc814",
+    "title": "Antibiotic Use",
+    "source_name": "U.S. Centers for Disease Control and Prevention (CDC)",
+    "source_url": "https://www.cdc.gov/antibiotic-use/",
+    "publication_date": null,
+    "domain": "Medical",
+    "document_type": "txt",
+    "content_hash": "4c5fc8148bd2857f",
+    "ingestion_date": "2026-10-12T09:48:44.553188+00:00",
+    "chunk_count": 1
+  },
+  "doc_diabetes_e9d0a8e1": {
+    "document_id": "doc_diabetes_e9d0a8e1",
+    "title": "Diabetes",
+    "source_name": "World Health Organization (WHO)",
+    "source_url": "https://www.who.int/news-room/fact-sheets/detail/diabetes",
+    "publication_date": null,
+    "domain": "Medical",
+    "document_type": "txt",
+    "content_hash": "e9d0a8e141f6c17b",
+    "ingestion_date": "2026-10-12T09:48:44.553472+00:00",
+    "chunk_count": 1
+  },
+  "doc_hypertension_39a6d49a": {
+    "document_id": "doc_hypertension_39a6d49a",
+    "title": "Hypertension",
+    "source_name": "World Health Organization (WHO)",
+    "source_url": "https://www.who.int/news-room/fact-sheets/detail/hypertension",
+    "publication_date": null,
+    "domain": "Medical",
+    "document_type": "txt",
+    "content_hash": "39a6d49a7876f54f",
+    "ingestion_date": "2026-10-12T09:48:44.553693+00:00",
+    "chunk_count": 1
+  }
+}

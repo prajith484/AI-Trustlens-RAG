@@ -1,0 +1,7 @@
+Vector Search and Qdrant
+
+A vector database stores dense embedding vectors and retrieves nearest neighbours by similarity search. Qdrant stores vectors with payload metadata including the original text chunk, title, source name, and domain.
+
+Embeddings are generated with models such as sentence-transformers all-MiniLM-L6-v2, which produces 384-dimensional vectors. Similarity is measured with cosine similarity over L2-normalised vectors.
+
+Qdrant supports metadata filtering by domain, document ID, and source, as well as batch upserts with duplicate prevention based on stable point IDs.

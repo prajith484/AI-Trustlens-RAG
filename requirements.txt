@@ -1,0 +1,25 @@
+# AI TrustLens RAG — pinned floors verified on Python 3.13 (Windows).
+# Floors use >= so pip can resolve newer wheels on newer Pythons (exact == pins
+# such as torch==2.5.1 / numpy==1.26.4 have NO wheels for Python 3.13).
+# Tested working set (Oct 2026, Python 3.13.5): fastapi 0.143, uvicorn 0.54,
+# pydantic 2.14, qdrant-client 1.19, numpy 2.5, rank-bm25 0.2.2, pypdf 6.20,
+# pytest 9.1, httpx 0.28. All 29 tests + evaluation pass on that set.
+# --- API / web ---
+fastapi>=0.115.6
+uvicorn>=0.34.0
+pydantic>=2.10.4
+python-dotenv>=1.0.1
+# --- Embeddings (non-generative; permitted) ---
+sentence-transformers>=3.3.1
+torch>=2.6.0  # 2.6.0 is the first torch with Python 3.13 wheels
+numpy>=1.26.4  # numpy>=2.0 required on Python 3.13
+# --- Retrieval / storage ---
+qdrant-client>=1.12.1
+neo4j>=5.26.0
+rank-bm25>=0.2.2
+# --- Ingestion ---
+pypdf>=5.1.0
+beautifulsoup4>=4.12.3
+# --- Testing / eval ---
+pytest>=8.3.4
+httpx>=0.28.1

@@ -1,0 +1,11 @@
+Artificial Intelligence and Transformers
+
+The Transformer architecture was introduced in 2017 in the paper "Attention Is All You Need" by Vaswani et al. at Google.
+
+Transformers rely on the self-attention mechanism instead of recurrence, which allows efficient parallel training on large corpora.
+
+BERT, published in 2018 by Google, is a Transformer-based encoder model for language understanding tasks.
+
+Retrieval-Augmented Generation (RAG) combines a retriever over trusted documents with a generator. The retriever finds evidence passages and the generator conditions on them.
+
+Large language models such as GPT from OpenAI and models from Anthropic are often audited for factual accuracy using evidence-based verification.

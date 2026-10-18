@@ -1,0 +1,9 @@
+Source: World Health Organization (WHO)
+Title: Diabetes
+URL: https://www.who.int/news-room/fact-sheets/detail/diabetes
+
+MEDICAL RAG TEST DOCUMENT — verify against the linked source before clinical use.
+
+Diabetes is a chronic disease that occurs when the pancreas does not produce enough insulin or when the body cannot effectively use the insulin it produces. Diabetes can lead to serious complications over time. Information about diabetes types, symptoms, risk factors, diagnosis, and management should be checked against current guidance from the source above.
+
+This document is a starter template for testing retrieval. Replace or expand this text with relevant factual passages from the linked source, preserving the original meaning and recording the date you accessed or reviewed the source.

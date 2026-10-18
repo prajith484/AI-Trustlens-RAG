@@ -1,0 +1,9 @@
+Source: World Health Organization (WHO)
+Title: Hypertension
+URL: https://www.who.int/news-room/fact-sheets/detail/hypertension
+
+MEDICAL RAG TEST DOCUMENT — verify against the linked source before clinical use.
+
+Hypertension is high blood pressure. It is an important risk factor for cardiovascular disease. Many people with hypertension may not notice symptoms, so blood pressure measurement is important for identifying it. Risk factors, diagnosis, prevention, and treatment recommendations should be checked against current guidance from the source above.
+
+This document is a starter template for testing retrieval. Replace or expand this text with relevant factual passages from the linked source, preserving the original meaning and recording the date you accessed or reviewed the source.

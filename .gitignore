@@ -1,0 +1,10 @@
+__pycache__/
+*.pyc
+.env
+qdrant_storage/
+bm25_index.pkl
+*.pkl
+.pytest_cache/
+evaluation/results.json
+evaluation/results.csv
+neo4j_data/
