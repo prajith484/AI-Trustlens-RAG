@@ -1,0 +1,19 @@
+Source: World Health Organization (WHO)
+Title: Lung cancer
+URL: https://www.who.int/news-room/fact-sheets/detail/lung-cancer
+Date: 16 April 2026
+Domain: Medical
+
+Lung cancer is the leading cause of cancer cases and deaths worldwide with an estimated 2.5 million new cases and 1.8 million deaths in 2022. More than 1.3 million cases in men and nearly 500 000 lung cancer cases in women are preventable, with the majority attributable to tobacco smoking (60-70%), followed by air pollution and occupational exposure. Lung cancer is often diagnosed at advanced stages when treatment options are limited. Screening high risk individuals has the potential to allow early detection and to dramatically improve survival rates. Primary prevention, such as tobacco control measures and reducing exposure to environmental risk factors, can reduce the incidence of lung cancer and save lives.
+
+Lung cancer occurs when abnormal cells grow uncontrollably in the lungs. Treatments depend on the person's medical history and the stage of the disease. The two main types of lung cancer are non-small cell lung cancer (NSCLC), which accounts for around 85% of cases, and small cell lung cancer (SCLC), which is less common but typically more aggressive.
+
+Smoking tobacco, including cigarettes, cigars, and pipes, is the primary risk factor for lung cancer. Other important risk factors include: exposure to secondhand tobacco smoke; outdoor and household air pollution; occupational exposures such as asbestos, silica, and diesel exhaust; radon exposure; certain chronic lung diseases and genetic susceptibility.
+
+Not smoking tobacco is the best way to prevent lung cancer. Primary prevention includes smoking cessation, promoting smoke-free environments, implementing tobacco control policies, addressing occupational hazards, and reducing air pollution levels.
+
+Common symptoms of lung cancer include: cough that does not go away; chest pain; shortness of breath; coughing up blood (haemoptysis); fatigue; weight loss with no known cause; and lung infections that keep coming back. Early symptoms may be mild or dismissed as common respiratory issues, leading to delayed diagnosis.
+
+Early diagnosis programmes can reduce delays in receiving care after symptom onset. Screening can be considered for defined high-risk individuals, particularly current or former heavy smokers, and has been shown to reduce lung cancer mortality when implemented with appropriate quality assurance and follow-up care. Diagnostic methods for lung cancer include physical examination, imaging such as chest X-rays, computed tomography scans and magnetic resonance imaging, examination of the lung using bronchoscopy, taking a sample of tissue for histopathology examination, and molecular testing to identify specific genetic mutations or biomarkers.
+
+Treatment depends on cancer type, stage, molecular profile, and the individual's health status. Options include surgery, radiotherapy, chemotherapy, targeted therapy, and immunotherapy. For early-stage disease, the primary treatment is surgical removal of the tumour through procedures such as lobectomy, segmentectomy, or wedge resection. Neoadjuvant therapy can help reduce tumour size. Adjuvant treatment is often recommended after surgery to reduce the risk of cancer recurrence. For metastatic stage lung cancer, systemic therapies such as chemotherapy, targeted therapy, and immunotherapy play a crucial role. Clinical trials offer opportunities to access novel treatments or experimental therapies.
